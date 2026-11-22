@@ -1,28 +1,40 @@
 {
-  "name": "notion-to-discord-bot",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "deploy": "wrangler deploy",
-    "dev": "wrangler dev",
-    "start": "wrangler dev",
-    "test": "vitest",
-    "cf-typegen": "wrangler types"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@cloudflare/vitest-pool-workers": "^0.5.34",
-    "@cloudflare/workers-types": "^4.20241205.0",
-    "@notionhq/client": "^2.2.15",
-    "discord-api-types": "^0.37.110",
-    "typescript": "^5.7.2",
-    "vitest": "2.0.5",
-    "wrangler": "^3.96.0"
-  },
-  "dependencies": {
-    "@hono/valibot-validator": "^0.5.1",
-    "hono": "^4.6.13",
-    "stripe": "^17.4.0",
-    "valibot": "1.0.0"
-  }
+	"name": "notion-to-discord-bot",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev",
+		"start": "wrangler dev",
+		"test": "vp test run",
+		"cf-typegen": "wrangler types",
+		"check": "vp check",
+		"build": "vp run build:worker",
+		"check:fix": "vp check --fix",
+		"build:worker": "wrangler deploy --dry-run --outdir dist"
+	},
+	"dependencies": {
+		"@hono/valibot-validator": "^0.5.1",
+		"hono": "^4.6.13",
+		"stripe": "^17.4.0",
+		"valibot": "1.0.0"
+	},
+	"devDependencies": {
+		"@cloudflare/vitest-plugin": "^1.8.4",
+		"@notionhq/client": "^2.2.15",
+		"discord-api-types": "^0.37.110",
+		"typescript": "^5.7.2",
+		"vite": "catalog:",
+		"vite-plus": "catalog:",
+		"vitest": "catalog:",
+		"wrangler": "^4.164.0"
+	},
+	"devEngines": {
+		"runtime": {
+			"name": "node",
+			"version": "24.22.1"
+		}
+	},
+	"packageManager": "pnpm@12.21.0"
 }
