@@ -24,9 +24,9 @@ Vite+ provides formatting, linting, type checks and tests. Tests run locally
 in the Cloudflare Workers runtime. The build task bundles with Wrangler in
 dry-run mode; it does not deploy. Use `pnpm dev` for local development.
 
-Update Vite+ and its bundled tools together with `vp migrate`, then update the
-pinned `setup-vp` version in CI and refresh the pnpm lockfile. Run the project's
-checks before committing toolchain updates.
+Update Vite+ and its bundled tools together with `vp migrate`, then refresh the
+pnpm lockfile. CI resolves the Vite+ version from the project dependency or catalog
+automatically. Run the project's checks before committing toolchain updates.
 
 ### Runtime versions
 
