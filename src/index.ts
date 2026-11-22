@@ -22,7 +22,7 @@ async function createAndSendInvoice(
 		});
 
 		// 請求アイテムの作成
-		const invoiceItem = await stripe.invoiceItems.create({
+		await stripe.invoiceItems.create({
 			customer: customerId,
 			price: "price_1QWpYBD37ZFLFPSrxmlhTHZT",
 			invoice: invoice.id,
